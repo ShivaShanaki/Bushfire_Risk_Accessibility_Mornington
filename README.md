@@ -51,12 +51,13 @@ The composite score was classified into 5 categories using **Natural Breaks (Jen
 | Very High Risk | 0.69 – 0.98 |
 
 ## Results
-*(Fill in from the attribute table / Statistics panel in QGIS — select `SA1_FireRisk_combined`, use the Field Calculator or Statistics panel on `Risk_score`, or run "Basic Statistics for Fields" to get counts/percentages per class.)*
 
 - Total SA1s analyzed: 404 (397 with valid scores, 7 excluded)
-- % of population in Very High / High Risk areas: *[to add]*
-- % of population in Low / Very Low Risk areas: *[to add]*
+- % of population in Very High / High Risk areas: ~33.5% (58,529 of 174,676 residents)
+- % of population in Low / Very Low Risk areas: ~22.3% (39,028 of 174,676 residents)
+- The remaining ~44.2% of the population lives in Moderate Risk areas
 - General pattern: inland and vegetated central areas show the highest composite risk, while coastal and more built-up areas near fire stations show lower risk
+
 
 ## Map Output
 ![Bushfire Risk Map](Bushfire_Risk_Map_Mornington.png)
