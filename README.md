@@ -50,6 +50,30 @@ The composite score was classified into 5 categories using **Natural Breaks (Jen
 | High Risk | 0.57 – 0.69 |
 | Very High Risk | 0.69 – 0.98 |
 
+### 5. Automation with Graphical Modeler
+
+Steps 3 and 4 (vegetation proximity and composite risk score) were automated as a QGIS Graphical Model, so the risk scoring can be re-run with a single click or reused for other study areas.
+
+- Model file: [`model/Bushfire_Risk_calculator.model3`](model/Bushfire_Risk_calculator.model3)
+- Python version: [`model/Bushfire_Risk_calculator.py`](model/Bushfire_Risk_calculator.py)
+
+![Model workflow](images/model_workflow.png)
+
+**Inputs (model parameters):** `sa1_points`, `vegetation_layer`, `fire_stations` (all in EPSG:7855)  
+
+**Output:** `Risk_score`, SA1 points with the composite risk score
+
+**Workflow:**
+1. *Join attributes by nearest*: SA1 points → vegetation (distance to nearest vegetation)
+2. *Join attributes by nearest*: → fire stations (distance to nearest fire station)
+3. *Field calculator*: composite `Risk_Score` using min–max scaling with the observed distance ranges (vegetation: 0–3583.68 m; fire station: 133.55–11047.4 m), equally weighted (0.5 / 0.5)
+
+The min/max values are the observed ranges in this study area and should be updated if the input data changes.
+
+**Note:** Equal weights were chosen as a simple, transparent baseline. The score does not account for slope, wind, or road access.
+
+**How to run:** QGIS → Processing Toolbox → Models → Add Model to Toolbox → select the `.model3` file, then provide the three input layers.
+
 ## Results
 
 - Total SA1s analyzed: 404 (397 with valid scores, 7 excluded)
