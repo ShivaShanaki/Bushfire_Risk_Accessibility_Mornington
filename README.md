@@ -70,7 +70,7 @@ Steps 3 and 4 (vegetation proximity and composite risk score) were automated as 
 
 The min/max values are the observed ranges in this study area and should be updated if the input data changes.
 
-**Note:** Equal weights were chosen as a simple, transparent baseline. The score does not account for slope, wind, or road access.
+**Note:** Equal weights were chosen as a simple, transparent baseline. The score does not account for slope, wind, or road access. The model uses straight-line distance to the nearest fire station, whereas the main analysis (Step 2) used road-network distance from QNEAT3, so scores from the model may differ slightly from the published map.
 
 **How to run:** QGIS → Processing Toolbox → Models → Add Model to Toolbox → select the `.model3` file, then provide the three input layers.
 
